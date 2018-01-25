@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test App</title>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="/Admin">Test Data Administration</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br/>
+    <div class="jumbotron">
+
+        <div>
+            <label>
+                Select Use Case
+            </label>
+            <select>
+                <% for(var i=0; i<quotes.length; i++) {%>
+                    <option><%= quotes[i].name %> | <%= quotes[i].quote %></option>
+                <% } %>
+            </select>
+        </div>
+
+        <div>
+            <label>
+                Enter Input Request
+            </label>
+            <div>
+            <textarea rows="10">
+
+            </textarea>
+            </div>
+        <form action="/quotes" method="POST">
+            <button type="submit">Submit</button>
+        </form>
+
+            <label>
+                Response
+            </label>
+            <div>
+            <textarea rows="10">
+
+            </textarea>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
